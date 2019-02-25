@@ -1,24 +1,31 @@
 package excellgenerate;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import javax.sql.RowSet;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcellCreate {
     public static void run() throws IOException, InvalidFormatException, NullPointerException {
-        Workbook workbook = WorkbookFactory.create(new File("Test.xlsx"));
-        Sheet sheet = workbook.getSheetAt(0);
-        Row row = sheet.getRow(1);
-        Cell cell = row.getCell(1);
-        if (cell == null)
-            cell = row.createCell(2);
-        cell.setCellType(Cell.CELL_TYPE_STRING);
-        cell.setCellValue("Updated Value");
-        FileOutputStream fileOut = new FileOutputStream("TestEdit.xlsx");
-        workbook.write(fileOut);
-        fileOut.close();
+        FileInputStream myxls = new FileInputStream("Test.xlsx");
+        XSSFWorkbook studentsSheet = new XSSFWorkbook(myxls);
+        XSSFSheet worksheet = studentsSheet.getSheetAt(0);
+        int lastRow=worksheet.getLastRowNum();
+        System.out.println(lastRow);
+        Row row = worksheet.createRow(++lastRow);
+        row.createCell(1).setCellValue("Dr.Hola");
+        myxls.close();
+        FileOutputStream output_file =new FileOutputStream(new File("Test.xlsx"));
+                studentsSheet.write(output_file);
+        output_file.close();
+        System.out.println(" is successfully written");
     }
 }
