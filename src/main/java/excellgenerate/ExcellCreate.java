@@ -21,6 +21,8 @@ public class ExcellCreate {
         int lastRow=worksheet.getLastRowNum();
         System.out.println(lastRow);
         Row row = worksheet.createRow(++lastRow);
+        Cell cell=row.createCell(2);
+        cell.setCellValue(456);
         row.createCell(1).setCellValue("Dr.Hola");
         myxls.close();
         FileOutputStream output_file =new FileOutputStream(new File("Test.xlsx"));
