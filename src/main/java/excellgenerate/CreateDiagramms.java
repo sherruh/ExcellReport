@@ -7,9 +7,13 @@ import java.io.IOException;
 
 public class CreateDiagramms implements ICopyFile {
 
-    File source=new File("sources/DiagrammsLTE.xlsx");
-    File dest=new File("LTE/Diagramms.xlsx");
+    File sourceLTE=new File("sources//LTE/DiagrammsLTE.xlsx");
+    File destLTE=new File("LTE/Diagramms.xlsx");
     public CreateDiagramms() throws IOException {
-        this.copyFileUsingJava7Files(source,dest);
+
+    }
+
+    public void createForLTE() throws IOException {
+        this.copyFileUsingJava7Files(sourceLTE,destLTE);
     }
 }

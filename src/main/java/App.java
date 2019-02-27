@@ -11,6 +11,7 @@ public class App {
         try {
             ExcellCreate.run();
             CreateDiagramms createDiagramms=new CreateDiagramms();
+            createDiagramms.createForLTE();
             ReaderDataLTE readerDataLTE=new ReaderDataLTE();
             readerDataLTE.readCQIDiagLTE();
         } catch (IOException e) {
