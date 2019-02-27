@@ -1,3 +1,4 @@
+import excellgenerate.CreateDiagramms;
 import excellgenerate.ExcellCreate;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -11,14 +12,11 @@ public class App {
     public static void main(String[] args) {
         try {
             ExcellCreate.run();
+            CreateDiagramms createDiagramms=new CreateDiagramms();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InvalidFormatException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void copyFileUsingJava7Files(File source, File dest) throws IOException {
-        Files.copy(source.toPath(), dest.toPath());
     }
 }
