@@ -7,10 +7,11 @@ import java.io.IOException;
 
 public class CreateDiagramms implements ICopyFile {
 
-    File sourceLTE=new File("sources//LTE/DiagrammsLTE.xlsx");
-    File destLTE=new File("LTE/Diagramms.xlsx");
-    public CreateDiagramms() throws IOException {
-
+    File sourceLTE;
+    File destLTE;
+    public CreateDiagramms(String pathDestLTE,String pathSourceLTE) throws IOException {
+        sourceLTE=new File(pathSourceLTE);
+        destLTE=new File(pathDestLTE);
     }
 
     public void createForLTE() throws IOException {

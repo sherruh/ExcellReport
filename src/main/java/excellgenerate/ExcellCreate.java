@@ -25,10 +25,5 @@ public class ExcellCreate {
         cell.setCellValue(456);
         row.createCell(1).setCellValue("Dr.Hola");
         myxls.close();
-        FileOutputStream output_file =new FileOutputStream(new File("Test.xlsx"));
-                studentsSheet.write(output_file);
-        output_file.close();
-        System.out.println(" is successfully written");
-
     }
 }

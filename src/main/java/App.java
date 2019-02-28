@@ -1,4 +1,6 @@
 import datareaders.ReaderDataLTE;
+import datawirter.WriterData;
+import datawirter.WriterDataLTE;
 import enums.Operators;
 import excellgenerate.CreateDiagramms;
 import excellgenerate.ExcellCreate;
@@ -16,10 +18,19 @@ public class App {
 
             Operators operators=Operators.ALL;//TODO user set
 
-            CreateDiagramms createDiagramms=new CreateDiagramms();
+            String pathDestLTE="LTE/Diagramms.xlsx";
+            String pathSourceLTE="sources//LTE/DiagrammsLTE.xlsx";
+
+            CreateDiagramms createDiagramms=new CreateDiagramms(pathDestLTE,pathSourceLTE);
             createDiagramms.createForLTE();
+
             ReaderDataLTE readerDataLTE=new ReaderDataLTE(operators);
             readerDataLTE.readCQIDiagLTE();
+
+            WriterDataLTE writerDataLTE=new WriterDataLTE(readerDataLTE,pathDestLTE);
+            writerDataLTE.writeCQIDiagLTE();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InvalidFormatException e) {

@@ -13,6 +13,18 @@ public class ReaderDataLTE extends ReaderData {
 
     Operators operators;
 
+    public List<String> getValuesCQINur() {
+        return valuesCQINur;
+    }
+
+    public List<String> getValuesCQIMeg() {
+        return valuesCQIMeg;
+    }
+
+    public List<String> getValuesCQISky() {
+        return valuesCQISky;
+    }
+
     List<String> valuesCQINur;
     List<String> valuesCQIMeg;
     List<String> valuesCQISky;
