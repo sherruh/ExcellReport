@@ -30,6 +30,7 @@ public class WriterDataLTE extends WriterData {
 
     public void writeCQIDiagLTE() throws IOException {
         writeData(CQISheet,38,8,66,5,readerData.getValuesCQINur());
+        writeData(CQISheet,38,16,66,13,readerData.getValuesCQIMeg());
         diagrammLTE.close();
         diagrammLTEedited=new FileOutputStream(pathDestLTE);
         diagrammLTESheets.write(diagrammLTEedited);
