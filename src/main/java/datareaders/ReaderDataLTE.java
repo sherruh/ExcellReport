@@ -43,23 +43,51 @@ public class ReaderDataLTE extends ReaderData {
     List<String> valuesPRBNur;
     List<String> valuesPRBMeg;
     List<String> valuesPRBSky;
+    List<String> valuesThrputNur;
+    List<String> valuesThrputMeg;
+    List<String> valuesThrputSky;
 
     public ReaderDataLTE(Operators operators){
         this.operators=operators;
     }
 
     public void readCQIDiagLTE() throws IOException {
-        if (operators==ALL){
-            readCQIDiagLTENur();
-            readCQIDiagLTEMeg();
-            readCQIDiagLTESky();
-        }
+        readCQIDiagLTENur();
+        readCQIDiagLTEMeg();
+        readCQIDiagLTESky();
     }
 
     public void readPRBDiagLTE() throws IOException {
         readPRBDiagLTENur();
         readPRBDiagLTEMeg();
         readPRBDiagLTESky();
+    }
+
+    public void readThrputDiagLTE() throws IOException {
+        readThrputDiagLTENur();
+        readThrputDiagLTEMeg();
+        readThrputDiagLTESky();
+    }
+
+    private void readThrputDiagLTENur() throws IOException {
+        valuesThrputNur=readData("LTE/Thrput Diag LTE N.txt",27);
+        for (String value:valuesThrputNur){
+            System.out.println("Thrput "+ value);
+        }
+    }
+
+    private void readThrputDiagLTEMeg() throws IOException {
+        valuesThrputMeg=readData("LTE/Thrput Diag LTE M.txt",27);
+        for (String value:valuesThrputMeg){
+            System.out.println("Thrput "+ value);
+        }
+    }
+
+    private void readThrputDiagLTESky() throws IOException {
+        valuesThrputSky=readData("LTE/Thrput Diag LTE S.txt",27);
+        for (String value:valuesThrputSky){
+            System.out.println("Thrput "+ value);
+        }
     }
 
     private void readPRBDiagLTENur() throws IOException {

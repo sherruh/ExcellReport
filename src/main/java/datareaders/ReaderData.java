@@ -19,10 +19,12 @@ public abstract class ReaderData {
         }
         for(String value:values){
             char[] temp;
+            System.out.println("Value " + value);
             temp=value.toCharArray();
             if (temp.length==0|| value.contains("Distance/m")){continue;}
             correctValues.add(value.substring(value.indexOf(".")-2).replace("\t","").replace("%",""));
         }
+        file.close();
         return correctValues;
     }
 }

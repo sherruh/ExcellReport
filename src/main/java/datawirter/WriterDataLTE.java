@@ -14,6 +14,7 @@ public class WriterDataLTE extends WriterData {
 
     XSSFSheet CQISheet;
     XSSFSheet PRBSheet;
+    XSSFSheet ThrputSheet;
     ReaderDataLTE readerData;
     FileInputStream diagrammLTE;
     FileOutputStream diagrammLTEedited;
@@ -24,10 +25,11 @@ public class WriterDataLTE extends WriterData {
         this.readerData=readerData;
         this.pathDestLTE=pathDestLTE;
         diagrammLTE = new FileInputStream(pathDestLTE);
-
         diagrammLTESheets = new XSSFWorkbook(diagrammLTE);
         CQISheet = diagrammLTESheets.getSheetAt(0);
         PRBSheet = diagrammLTESheets.getSheetAt(1);
+        ThrputSheet = diagrammLTESheets.getSheetAt(2);
+
 
     }
 
