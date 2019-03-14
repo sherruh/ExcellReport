@@ -37,6 +37,18 @@ public class ReaderDataLTE extends ReaderData {
         return valuesPRBSky;
     }
 
+    public List<String> getValuesThrputNur() {
+        return valuesThrputNur;
+    }
+
+    public List<String> getValuesThrputMeg() {
+        return valuesThrputMeg;
+    }
+
+    public List<String> getValuesThrputSky() {
+        return valuesThrputSky;
+    }
+
     List<String> valuesCQINur;
     List<String> valuesCQIMeg;
     List<String> valuesCQISky;
@@ -46,6 +58,8 @@ public class ReaderDataLTE extends ReaderData {
     List<String> valuesThrputNur;
     List<String> valuesThrputMeg;
     List<String> valuesThrputSky;
+
+
 
     public ReaderDataLTE(Operators operators){
         this.operators=operators;

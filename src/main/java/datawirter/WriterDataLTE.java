@@ -29,8 +29,6 @@ public class WriterDataLTE extends WriterData {
         CQISheet = diagrammLTESheets.getSheetAt(0);
         PRBSheet = diagrammLTESheets.getSheetAt(1);
         ThrputSheet = diagrammLTESheets.getSheetAt(2);
-
-
     }
 
     public void writeCQIDiagLTE() throws IOException {
@@ -44,6 +42,11 @@ public class WriterDataLTE extends WriterData {
         writeData(PRBSheet,40,10,78,7,readerData.getValuesPRBNur());
         writeData(PRBSheet,40,19,78,16,readerData.getValuesPRBMeg());
         writeData(PRBSheet,40,28,78,25,readerData.getValuesPRBSky());
+    }
+
+    public void writeThrputDiagLTE() throws IOException {
+        writeData(ThrputSheet,55,10,105,7,readerData.getValuesThrputNur());
+
         saveFile();
     }
 
