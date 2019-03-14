@@ -13,6 +13,7 @@ import java.io.IOException;
 public class WriterDataLTE extends WriterData {
 
     XSSFSheet CQISheet;
+    XSSFSheet PRBSheet;
     ReaderDataLTE readerData;
     FileInputStream diagrammLTE;
     FileOutputStream diagrammLTEedited;
@@ -26,12 +27,15 @@ public class WriterDataLTE extends WriterData {
 
         diagrammLTESheets = new XSSFWorkbook(diagrammLTE);
         CQISheet = diagrammLTESheets.getSheetAt(0);
+        PRBSheet = diagrammLTESheets.getSheetAt(1);
+
     }
 
     public void writeCQIDiagLTE() throws IOException {
         writeData(CQISheet,38,8,66,5,readerData.getValuesCQINur());
         writeData(CQISheet,38,16,66,13,readerData.getValuesCQIMeg());
         writeData(CQISheet,38,24,66,21,readerData.getValuesCQISky());
+
         diagrammLTE.close();
         diagrammLTEedited=new FileOutputStream(pathDestLTE);
         diagrammLTESheets.write(diagrammLTEedited);

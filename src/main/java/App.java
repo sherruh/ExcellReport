@@ -26,6 +26,7 @@ public class App {
 
             ReaderDataLTE readerDataLTE=new ReaderDataLTE(operators);
             readerDataLTE.readCQIDiagLTE();
+            readerDataLTE.readPRBDiagLTE();
 
             WriterDataLTE writerDataLTE=new WriterDataLTE(readerDataLTE,pathDestLTE);
             writerDataLTE.writeCQIDiagLTE();
