@@ -30,6 +30,7 @@ public class App {
 
             WriterDataLTE writerDataLTE=new WriterDataLTE(readerDataLTE,pathDestLTE);
             writerDataLTE.writeCQIDiagLTE();
+            writerDataLTE.writePRBDiagLTE();
 
 
         } catch (IOException e) {

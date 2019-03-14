@@ -22,7 +22,6 @@ public abstract class WriterData {
             row=worksheet.getRow(i);
             cell=row.getCell(startCell);
             cell.setCellValue(Double.parseDouble(value));
-            System.out.println("here "+value);
             i+=2;
         }
     }

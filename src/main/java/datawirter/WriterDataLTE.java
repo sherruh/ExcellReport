@@ -36,10 +36,17 @@ public class WriterDataLTE extends WriterData {
         writeData(CQISheet,38,16,66,13,readerData.getValuesCQIMeg());
         writeData(CQISheet,38,24,66,21,readerData.getValuesCQISky());
 
+    }
+
+    public void writePRBDiagLTE() throws IOException {
+        writeData(PRBSheet,40,10,78,7,readerData.getValuesPRBNur());
+        saveFile();
+    }
+
+    private void saveFile() throws IOException {
         diagrammLTE.close();
         diagrammLTEedited=new FileOutputStream(pathDestLTE);
         diagrammLTESheets.write(diagrammLTEedited);
         diagrammLTEedited.close();
-
     }
 }
