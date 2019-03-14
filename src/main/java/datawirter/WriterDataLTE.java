@@ -40,6 +40,8 @@ public class WriterDataLTE extends WriterData {
 
     public void writePRBDiagLTE() throws IOException {
         writeData(PRBSheet,40,10,78,7,readerData.getValuesPRBNur());
+        writeData(PRBSheet,40,19,78,16,readerData.getValuesPRBMeg());
+        writeData(PRBSheet,40,28,78,25,readerData.getValuesPRBSky());
         saveFile();
     }
 

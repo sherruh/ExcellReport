@@ -32,7 +32,6 @@ public class App {
             writerDataLTE.writeCQIDiagLTE();
             writerDataLTE.writePRBDiagLTE();
 
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InvalidFormatException e) {
