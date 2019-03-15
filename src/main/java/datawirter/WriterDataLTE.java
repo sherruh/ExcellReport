@@ -2,6 +2,7 @@ package datawirter;
 
 import datareaders.ReaderData;
 import datareaders.ReaderDataLTE;
+import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -47,12 +48,13 @@ public class WriterDataLTE extends WriterData {
     public void writeThrputDiagLTE() throws IOException {
         writeData(ThrputSheet,55,10,105,7,readerData.getValuesThrputNur());
         writeData(ThrputSheet,55,19,105,16,readerData.getValuesThrputMeg());
-        writeData(ThrputSheet,55,27,105,24,readerData.getValuesThrputMeg());
+        writeData(ThrputSheet,55,27,105,24,readerData.getValuesThrputSky());
 
         saveFile();
     }
 
     private void saveFile() throws IOException {
+        XSSFFormulaEvaluator.evaluateAllFormulaCells(diagrammLTESheets);
         diagrammLTE.close();
         diagrammLTEedited=new FileOutputStream(pathDestLTE);
         diagrammLTESheets.write(diagrammLTEedited);
