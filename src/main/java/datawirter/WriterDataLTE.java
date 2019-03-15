@@ -46,6 +46,8 @@ public class WriterDataLTE extends WriterData {
 
     public void writeThrputDiagLTE() throws IOException {
         writeData(ThrputSheet,55,10,105,7,readerData.getValuesThrputNur());
+        writeData(ThrputSheet,55,19,105,16,readerData.getValuesThrputMeg());
+        writeData(ThrputSheet,55,27,105,24,readerData.getValuesThrputMeg());
 
         saveFile();
     }
